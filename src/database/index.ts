@@ -1,9 +1,5 @@
-import express from 'express';
-import mongoose from 'mongoose';
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
-
-const app = express();
 
 const uri = "mongodb+srv://user_admin:G82Y3eh6hJzSZWPc@cluster0.cbtqe.mongodb.net/firtapi";
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -27,12 +23,6 @@ async function run() {
   }
 }
 run().catch(console.dir);
-  
-app.use(express.json());
-app.get('/', (req, res) => {
-    res.send("ola");
-})
 
-app.listen(3000, () => {
-    console.log('Server is listening');
-});
+export default run();
+  
